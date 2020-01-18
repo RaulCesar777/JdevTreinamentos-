@@ -62,23 +62,22 @@ public class Aluno {
 
     public boolean getAlunoAprovado() {
         double media = this.getMediaNota();
-        if (media >=70) {
-           
-                return true;
-            }else{
-                return false;
-                
-            }
+        if (media >= 70) {
 
+            return true;
+        } else {
+            return false;
+
+        }
 
     }
 
     public String getAlunoAprovado2() {
         double media = this.getMediaNota();
-        if (media >=50) {
-            if(media>=70){
+        if (media >= 50) {
+            if (media >= 70) {
                 return " Aluno Aprovado";
-            }else{
+            } else {
                 return "  Aluno recuperação";
             }
 
@@ -122,6 +121,7 @@ public class Aluno {
 
     public String getRegitroGeral() {
         return regitroGeral;
+        
     }
 
     public void setRegitroGeral(String regitroGeral) {
