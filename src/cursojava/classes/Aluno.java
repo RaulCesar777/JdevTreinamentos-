@@ -48,7 +48,7 @@ public class Aluno {
                 + getDataNascimento() + "'" + ",\n regitroGeral='" + getRegitroGeral() + "'" + ",\n numeroCPF='"
                 + getNumeroCPF() + "'" + ",\n nomeMae='" + getNomeMae() + "'" + ",\n nomePai='" + getNomePai() + "'"
                 + ",\n dataMatricula='" + getDataMatricula() + "'" + ",\n nomeEscola='" + getNomeEscola() + "'"
-                + ",\n serieMatriculado='" + getSerieMatriculado() + "'" + ",\n disciplinas='" + getDisciplina() + "\n'"
+                + ",\n serieMatriculado='" + getSerieMatriculado() + "'" + ",\n disciplinas='" + getDisciplinas() + "\n'"
                 + "}";
     }
 
@@ -87,11 +87,11 @@ public class Aluno {
 
     }
 
-    public List<Disciplina> getDisciplina() {
+    public List<Disciplina> getDisciplinas() {
         return disciplinas;
     }
 
-    public void setDisciplina(List<Disciplina> disciplina) {
+    public void setDisciplinas(List<Disciplina> disciplina) {
         disciplinas = disciplina;
     }
 
@@ -212,5 +212,7 @@ public class Aluno {
             return false;
         return true;
     }
+
+	
 
 }

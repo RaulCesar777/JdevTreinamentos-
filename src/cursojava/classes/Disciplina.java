@@ -13,15 +13,14 @@ public class Disciplina {
 		Disciplina = disciplina;
 	}
 
-	public Double getNota() {
+	public double getNota() {
 		return nota;
 	}
-
-	public void setNota(Double nota) {
+	public void setNota(double nota) {
 		this.nota = nota;
-
 	}
 
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -52,10 +51,14 @@ public class Disciplina {
 			return false;
 		return true;
 	}
-
 	@Override
 	public String toString() {
-		return " \n Disciplina=" + Disciplina + ", nota=" + nota + "]";
+		return "{" +
+			" Disciplina='" + getDisciplina() + "'" +
+			", nota='" + getNota() + "'" +
+			"}";
 	}
+
+	
 
 }
