@@ -8,7 +8,6 @@ import cursojava.classes.Disciplina;
 public class PrimeiraClasseJava {
 
 	public static void main(String[] args) {
-		
 
 		String NOME = JOptionPane.showInputDialog("Qual o nome do aluno ?");
 		Integer IDADE = Integer.parseInt(JOptionPane.showInputDialog("Qual a idade do aluno ?"));
@@ -44,8 +43,17 @@ public class PrimeiraClasseJava {
 
 		int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina ?");
 		if (escolha == 0) {
-			String disciplinaRemover = JOptionPane.showInputDialog("Qual disciplina deseja remover ? 1,2,3 ou 4 ?");
-			aluno1.getDisciplina().remove(Integer.parseInt(disciplinaRemover) - 1);
+
+			int continuarremover = 0;
+			int posicao = 1;
+			while (continuarremover == 0) {
+
+				String disciplinaRemover = JOptionPane.showInputDialog("Qual disciplina deseja remover ? 1,2,3 ou 4 ?");
+				aluno1.getDisciplina().remove(Integer.parseInt(disciplinaRemover) - posicao);
+				posicao++;
+				continuarremover = JOptionPane.showConfirmDialog(null, "deseja remover outra disciplina ?");
+
+			}
 
 		}
 

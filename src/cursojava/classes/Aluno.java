@@ -121,7 +121,7 @@ public class Aluno {
 
     public String getRegitroGeral() {
         return regitroGeral;
-        
+
     }
 
     public void setRegitroGeral(String regitroGeral) {
