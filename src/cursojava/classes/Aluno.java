@@ -3,6 +3,8 @@ package cursojava.classes;
 import java.util.ArrayList;
 import java.util.List;
 
+import cursojava.constantes.StatusAluno;
+
 public class Aluno {
 
     private String nome;
@@ -48,8 +50,8 @@ public class Aluno {
                 + getDataNascimento() + "'" + ",\n regitroGeral='" + getRegitroGeral() + "'" + ",\n numeroCPF='"
                 + getNumeroCPF() + "'" + ",\n nomeMae='" + getNomeMae() + "'" + ",\n nomePai='" + getNomePai() + "'"
                 + ",\n dataMatricula='" + getDataMatricula() + "'" + ",\n nomeEscola='" + getNomeEscola() + "'"
-                + ",\n serieMatriculado='" + getSerieMatriculado() + "'" + ",\n disciplinas='" + getDisciplinas() + "\n'"
-                + "}";
+                + ",\n serieMatriculado='" + getSerieMatriculado() + "'" + ",\n disciplinas='" + getDisciplinas()
+                + "\n'" + "}";
     }
 
     public double getMediaNota() {
@@ -76,13 +78,13 @@ public class Aluno {
         double media = this.getMediaNota();
         if (media >= 50) {
             if (media >= 70) {
-                return " Aluno Aprovado";
+                return StatusAluno.APROVADO;
             } else {
-                return "  Aluno recuperação";
+                return StatusAluno.RECUPERACAO;
             }
 
         } else {
-            return "  Aluno reprovado";
+            return StatusAluno.REPROVADO;
         }
 
     }
@@ -212,7 +214,5 @@ public class Aluno {
             return false;
         return true;
     }
-
-	
 
 }
