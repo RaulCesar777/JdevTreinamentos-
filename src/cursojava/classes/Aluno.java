@@ -46,7 +46,7 @@ public class Aluno {
 
     @Override
     public String toString() {
-        return "{" + "\n nome='" + getNome() + "'" + ",\n idade='" + getIdade() + "'" + ",\n dataNascimento='"
+        return "{" + "\n nome='" + getNome() + "'" + ",\n idade='" + getIdade() + "'" + ",\n dataNascimento ='"
                 + getDataNascimento() + "'" + ",\n regitroGeral='" + getRegitroGeral() + "'" + ",\n numeroCPF='"
                 + getNumeroCPF() + "'" + ",\n nomeMae='" + getNomeMae() + "'" + ",\n nomePai='" + getNomePai() + "'"
                 + ",\n dataMatricula='" + getDataMatricula() + "'" + ",\n nomeEscola='" + getNomeEscola() + "'"
