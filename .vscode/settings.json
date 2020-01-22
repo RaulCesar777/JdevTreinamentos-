@@ -2,6 +2,5 @@
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 10,
     "editor.cursorSurroundingLinesStyle": "all",
-    "editor.cursorSmoothCaretAnimation": true,
-    "editor.cursorStyle": "line-thin"
+    "editor.cursorSmoothCaretAnimation": true
 }
