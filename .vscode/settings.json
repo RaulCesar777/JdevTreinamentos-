@@ -2,5 +2,6 @@
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 10,
     "editor.cursorSurroundingLinesStyle": "all",
-    "editor.cursorSmoothCaretAnimation": true
+    "editor.cursorSmoothCaretAnimation": true,
+    "java.autobuild.enabled": true
 }

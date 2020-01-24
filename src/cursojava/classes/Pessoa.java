@@ -80,11 +80,57 @@ public class Pessoa {
         this.nomePai = nomePai;
     }
 
+
     @Override
     public String toString() {
-        return "{" + " nome='" + getNome() + "'" + ", idade='" + getIdade() + "'" + ", dataNascimento='"
-                + getDataNascimento() + "'" + ", regitroGeral='" + getRegitroGeral() + "'" + ", numeroCPF='"
-                + getNumeroCPF() + "'" + ", nomeMae='" + getNomeMae() + "'" + ", nomePai='" + getNomePai() + "'" + "}";
+        return "{" +
+            " nome='" + getNome() + "'" +
+            ", idade='" + getIdade() + "'" +
+            ", dataNascimento='" + getDataNascimento() + "'" +
+            ", regitroGeral='" + getRegitroGeral() + "'" +
+            ", numeroCPF='" + getNumeroCPF() + "'" +
+            ", nomeMae='" + getNomeMae() + "'" +
+            ", nomePai='" + getNomePai() + "'" +
+            "}";
     }
+    
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+        result = prime * result + ((numeroCPF == null) ? 0 : numeroCPF.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Pessoa other = (Pessoa) obj;
+        if (nome == null) {
+            if (other.nome != null)
+                return false;
+        } else if (!nome.equals(other.nome))
+            return false;
+        if (numeroCPF == null) {
+            if (other.numeroCPF != null)
+                return false;
+        } else if (!numeroCPF.equals(other.numeroCPF))
+            return false;
+        return true;
+    }
+
+
+
+    
+    
+
+   
 
 }

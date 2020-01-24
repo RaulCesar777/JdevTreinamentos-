@@ -41,13 +41,14 @@ public class Aluno extends Pessoa{
 
     @Override
     public String toString() {
-        return "{" + "\n nome='" + getNome() + "'" + ",\n idade='" + getIdade() + "'" + ",\n dataNascimento ='"
-                + getDataNascimento() + "'" + ",\n regitroGeral='" + getRegitroGeral() + "'" + ",\n numeroCPF='"
-                + getNumeroCPF() + "'" + ",\n nomeMae='" + getNomeMae() + "'" + ",\n nomePai='" + getNomePai() + "'"
-                + ",\n dataMatricula='" + getDataMatricula() + "'" + ",\n nomeEscola='" + getNomeEscola() + "'"
-                + ",\n serieMatriculado='" + getSerieMatriculado() + "'" + ",\n disciplinas='" + getDisciplinas()
-                + "\n'" + "}";
+        return "{" +
+            " dataMatricula='" + getDataMatricula() + "'" +
+            ", nomeEscola='" + getNomeEscola() + "'" +
+            ", serieMatriculado='" + getSerieMatriculado() + "'" +
+            ", disciplinas='" + getDisciplinas() + "'" +
+            "}";
     }
+
 
     public double getMediaNota() {
         double somaNotas = 0;
