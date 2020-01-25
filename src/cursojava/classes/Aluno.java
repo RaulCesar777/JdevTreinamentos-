@@ -69,6 +69,7 @@ public class Aluno extends Pessoa{
         }
 
     }
+  
 
     public String getAlunoAprovado2() {
         double media = this.getMediaNota();
@@ -209,6 +210,12 @@ public class Aluno extends Pessoa{
         } else if (!regitroGeral.equals(other.regitroGeral))
             return false;
         return true;
+    }
+
+    @Override
+    public double salario() {
+       
+        return 0;
     }
 
 }

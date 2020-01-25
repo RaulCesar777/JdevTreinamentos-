@@ -1,6 +1,6 @@
 package cursojava.classes;
 
-public class Pessoa {
+public abstract class Pessoa {
 
     protected String nome;
     protected Integer idade;
@@ -9,6 +9,8 @@ public class Pessoa {
     protected String numeroCPF;
     protected String nomeMae;
     protected String nomePai;
+
+    public abstract double salario();
 
     public String getNome() {
         return this.nome;
@@ -83,15 +85,15 @@ public class Pessoa {
 
     @Override
     public String toString() {
-        return "{" +
-            " nome='" + getNome() + "'" +
-            ", idade='" + getIdade() + "'" +
-            ", dataNascimento='" + getDataNascimento() + "'" +
-            ", regitroGeral='" + getRegitroGeral() + "'" +
-            ", numeroCPF='" + getNumeroCPF() + "'" +
-            ", nomeMae='" + getNomeMae() + "'" +
-            ", nomePai='" + getNomePai() + "'" +
-            "}";
+        return "[Pessoa]" +
+            "\n nome = '" + getNome() + "" +
+            ",\n idade = " + getIdade() + "" +
+            ",\n dataNascimento = " + getDataNascimento() + "" +
+            ",\n regitroGeral = " + getRegitroGeral() + "" +
+            ",\n numeroCPF = " + getNumeroCPF() + "" +
+            ",\n nomeMae = " + getNomeMae() + "" +
+            ",\n nomePai = " + getNomePai() + "" +
+            "";
     }
     
 
@@ -126,7 +128,10 @@ public class Pessoa {
         return true;
     }
 
+    public boolean pesssoaMaiorIdadde() {
+        return idade >=18; 
 
+    }
 
     
     

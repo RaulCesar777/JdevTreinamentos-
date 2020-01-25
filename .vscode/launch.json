@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - PrimeiraClasseJava",
+            "request": "launch",
+            "mainClass": "cursojava.executavel.PrimeiraClasseJava",
+            "projectName": "Escola"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - testandoClassesFilhas",
             "request": "launch",
             "mainClass": "cursojava.executavel.testandoClassesFilhas",

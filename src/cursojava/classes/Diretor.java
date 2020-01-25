@@ -11,6 +11,7 @@ public class Diretor extends Pessoa {
 
     public Diretor(String nome, Integer idade, String dataNascimento, String regitroGeral, String numeroCPF,
             String nomeMae, String nomePai, String registroEducação, int tempoDirecao, String titulacao) {
+
         super(nome, idade, dataNascimento, regitroGeral, numeroCPF, nomeMae, nomePai);
         this.registroEducação = registroEducação;
         this.tempoDirecao = tempoDirecao;
@@ -68,11 +69,20 @@ public class Diretor extends Pessoa {
 
     @Override
     public String toString() {
-        return "{" + " nome='" + getNome() + "'" + ", idade='" + getIdade() + "'" + ", dataNascimento='"
-                + getDataNascimento() + "'" + ", regitroGeral='" + getRegitroGeral() + "'" + ", numeroCPF='"
-                + getNumeroCPF() + "'" + ", nomeMae='" + getNomeMae() + "'" + ", nomePai='" + getNomePai() + "'"
-                + " registroEducação='" + getRegistroEducação() + "'" + ", tempoDirecao='" + getTempoDirecao() + "'"
-                + ", titulacao='" + getTitulacao() + "'" + "}";
+        return super.toString()+
+         "\n[Diretor]\n registroEducação = " + registroEducação + ",\n tempoDirecao = " + tempoDirecao + ",\n titulacao = "
+                + titulacao + "\n";
     }
+
+    @Override
+    public double salario() {
+      
+        return 3900.78;
+    }
+
+   
+    
+  
+   
 
 }
