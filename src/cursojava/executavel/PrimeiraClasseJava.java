@@ -16,115 +16,159 @@ public class PrimeiraClasseJava {
 
       public static void main(String[] args) {
 
-            String login = JOptionPane.showInputDialog("QUAL  O LOGIN");
-            String senha = JOptionPane.showInputDialog("QUAL  A SENHA");
+            try {
 
-            if (new FuncaoAutenticacao(new Secretario(login, senha)).autenticar() == false) {
+                  String login = JOptionPane.showInputDialog("QUAL  O LOGIN");
+                  String senha = JOptionPane.showInputDialog("QUAL  A SENHA");
 
-                  do {
-                        JOptionPane.showMessageDialog(null, "Senha ou login incorretos");
-                        login = JOptionPane.showInputDialog("QUAL  O LOGIN");
-                        senha = JOptionPane.showInputDialog("QUAL  A SENHA");
+                  if (new FuncaoAutenticacao(new Secretario(login, senha)).autenticar() == false) {
 
-                  } while (!new FuncaoAutenticacao(new Secretario(login, senha)).autenticar());
-            }
+                        do {
+                              JOptionPane.showMessageDialog(null, "Senha ou login incorretos");
+                              login = JOptionPane.showInputDialog("QUAL  O LOGIN");
+                              senha = JOptionPane.showInputDialog("QUAL  A SENHA");
 
-            if (new FuncaoAutenticacao(new Secretario(login, senha)).autenticar()) {
+                        } while (!new FuncaoAutenticacao(new Secretario(login, senha)).autenticar());
+                  }
 
-                  List<Aluno> alunos = new ArrayList<Aluno>();
+                  if (new FuncaoAutenticacao(new Secretario(login, senha)).autenticar()) {
 
-                  HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
+                        List<Aluno> alunos = new ArrayList<Aluno>();
 
-                  for (int qtd = 1; qtd <= 5; qtd++) {
+                        HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
 
-                        String NOME = JOptionPane.showInputDialog("Qual o nome do aluno " + qtd + "?");
-                        /*
-                         * Integer IDADE =
-                         * Integer.parseInt(JOptionPane.showInputDialog("Qual a idade do aluno ?"));
-                         * 
-                         * String DNASC = JOptionPane.showInputDialog("Qual a data de nascimento ?");
-                         * String RG = JOptionPane.showInputDialog("Qual o RG do aluno ?"); String CPF =
-                         * JOptionPane.showInputDialog("Qual o CPFdo aluno ?"); String NMAE =
-                         * JOptionPane.showInputDialog("Qual o nome da mae do aluno ?"); String NPAI =
-                         * JOptionPane.showInputDialog("Qual o nome do pai do aluno ?"); String DMATR =
-                         * JOptionPane.showInputDialog("Qual a data de matricula ?"); String SERIE =
-                         * JOptionPane.showInputDialog("Qual a serie  ?"); String NOMEESCOLA =
-                         * JOptionPane.showInputDialog("Qual o nome da escola ?");
-                         */
+                        for (int qtd = 1; qtd <= 5; qtd++) {
 
-                        Aluno aluno1 = new Aluno();
-                        aluno1.setNome(NOME);
-                        /*
-                         * aluno1.setIdade(IDADE);
-                         * 
-                         * aluno1.setDataNascimento(DNASC); aluno1.setRegitroGeral(RG);
-                         * aluno1.setNumeroCPF(CPF); aluno1.setNomeMae(NMAE); aluno1.setNomePai(NPAI);
-                         * aluno1.setDataMatricula(DMATR); aluno1.setSerieMatriculado(SERIE);
-                         * aluno1.setNomeEscola(NOMEESCOLA);
-                         */
+                              String NOME = JOptionPane.showInputDialog("Qual o nome do aluno " + qtd + "?");
+                              /*
+                               * Integer IDADE =
+                               * Integer.parseInt(JOptionPane.showInputDialog("Qual a idade do aluno ?"));
+                               * 
+                               * String DNASC = JOptionPane.showInputDialog("Qual a data de nascimento ?");
+                               * String RG = JOptionPane.showInputDialog("Qual o RG do aluno ?"); String CPF =
+                               * JOptionPane.showInputDialog("Qual o CPFdo aluno ?"); String NMAE =
+                               * JOptionPane.showInputDialog("Qual o nome da mae do aluno ?"); String NPAI =
+                               * JOptionPane.showInputDialog("Qual o nome do pai do aluno ?"); String DMATR =
+                               * JOptionPane.showInputDialog("Qual a data de matricula ?"); String SERIE =
+                               * JOptionPane.showInputDialog("Qual a serie  ?"); String NOMEESCOLA =
+                               * JOptionPane.showInputDialog("Qual o nome da escola ?");
+                               */
 
-                        for (int pos = 1; pos <= 1; pos++) {
-                              String nomeDisciplina = JOptionPane.showInputDialog("QUAL A DISCIPLINA  " + pos + " ");
-                              String notaDisciplina = JOptionPane.showInputDialog("QUAL A NOTA " + pos + " ");
-                              Disciplina disciplina = new Disciplina();
-                              disciplina.setDisciplina(nomeDisciplina);
-                              disciplina.setNota(Double.valueOf(notaDisciplina));
-                              aluno1.getDisciplinas().add(disciplina);
-                        }
+                              Aluno aluno1 = new Aluno();
+                              aluno1.setNome(NOME);
+                              /*
+                               * aluno1.setIdade(IDADE);
+                               * 
+                               * aluno1.setDataNascimento(DNASC); aluno1.setRegitroGeral(RG);
+                               * aluno1.setNumeroCPF(CPF); aluno1.setNomeMae(NMAE); aluno1.setNomePai(NPAI);
+                               * aluno1.setDataMatricula(DMATR); aluno1.setSerieMatriculado(SERIE);
+                               * aluno1.setNomeEscola(NOMEESCOLA);
+                               */
 
-                        int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina ?");
-                        if (escolha == 0) {
+                              for (int pos = 1; pos <= 1; pos++) {
+                                    String nomeDisciplina = JOptionPane
+                                                .showInputDialog("QUAL A DISCIPLINA  " + pos + " ");
+                                    String notaDisciplina = JOptionPane.showInputDialog("QUAL A NOTA " + pos + " ");
+                                    Disciplina disciplina = new Disciplina();
+                                    disciplina.setDisciplina(nomeDisciplina);
+                                    disciplina.setNota(Double.valueOf(notaDisciplina));
+                                    aluno1.getDisciplinas().add(disciplina);
+                              }
 
-                              int continuarremover = 0;
-                              int posicao = 1;
-                              while (continuarremover == 0) {
+                              int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina ?");
+                              if (escolha == 0) {
 
-                                    String disciplinaRemover = JOptionPane
-                                                .showInputDialog("Qual disciplina deseja remover ? 1,2,3 ou 4 ?");
-                                    aluno1.getDisciplinas().remove(Integer.parseInt(disciplinaRemover) - posicao);
-                                    posicao++;
-                                    continuarremover = JOptionPane.showConfirmDialog(null,
-                                                "deseja remover outra disciplina ?");
+                                    int continuarremover = 0;
+                                    int posicao = 1;
+                                    while (continuarremover == 0) {
+
+                                          String disciplinaRemover = JOptionPane
+                                                      .showInputDialog("Qual disciplina deseja remover ? 1,2,3 ou 4 ?");
+                                          aluno1.getDisciplinas().remove(Integer.parseInt(disciplinaRemover) - posicao);
+                                          posicao++;
+                                          continuarremover = JOptionPane.showConfirmDialog(null,
+                                                      "deseja remover outra disciplina ?");
+
+                                    }
 
                               }
 
+                              alunos.add(aluno1);
+                        }
+                        maps.put(StatusAluno.APROVADO, new ArrayList<Aluno>());
+                        maps.put(StatusAluno.RECUPERACAO, new ArrayList<Aluno>());
+                        maps.put(StatusAluno.REPROVADO, new ArrayList<Aluno>());
+
+                        for (Aluno aluno : alunos) {
+
+                              if (aluno.getAlunoAprovado2().equalsIgnoreCase(StatusAluno.APROVADO)) {
+                                    maps.get(StatusAluno.APROVADO).add(aluno);
+                              } else if (aluno.getAlunoAprovado2().equalsIgnoreCase(StatusAluno.RECUPERACAO)) {
+                                    maps.get(StatusAluno.RECUPERACAO).add(aluno);
+                              } else if (aluno.getAlunoAprovado2().equalsIgnoreCase(StatusAluno.REPROVADO)) {
+                                    maps.get(StatusAluno.REPROVADO).add(aluno);
+                              }
+
+                        }
+                        System.out.println(".....................");
+                        System.out.println("lista dos aprovados");
+                        for (Aluno aluno : maps.get(StatusAluno.APROVADO)) {
+                              System.out.println(
+                                          "Nome = " + aluno.getNome() + "  Resultado = " + aluno.getAlunoAprovado2());
+                        }
+                        System.out.println(".....................");
+                        System.out.println("lista dos que Recuperação");
+
+                        for (Aluno aluno : maps.get(StatusAluno.RECUPERACAO)) {
+                              System.out.println(
+                                          "Nome = " + aluno.getNome() + "  Resultado = " + aluno.getAlunoAprovado2());
                         }
 
-                        alunos.add(aluno1);
-                  }
-                  maps.put(StatusAluno.APROVADO, new ArrayList<Aluno>());
-                  maps.put(StatusAluno.RECUPERACAO, new ArrayList<Aluno>());
-                  maps.put(StatusAluno.REPROVADO, new ArrayList<Aluno>());
+                        System.out.println(".....................");
+                        System.out.println("lista alunos Reprovados");
 
-                  for (Aluno aluno : alunos) {
-
-                        if (aluno.getAlunoAprovado2().equalsIgnoreCase(StatusAluno.APROVADO)) {
-                              maps.get(StatusAluno.APROVADO).add(aluno);
-                        } else if (aluno.getAlunoAprovado2().equalsIgnoreCase(StatusAluno.RECUPERACAO)) {
-                              maps.get(StatusAluno.RECUPERACAO).add(aluno);
-                        } else if (aluno.getAlunoAprovado2().equalsIgnoreCase(StatusAluno.REPROVADO)) {
-                              maps.get(StatusAluno.REPROVADO).add(aluno);
+                        for (Aluno aluno : maps.get(StatusAluno.REPROVADO)) {
+                              System.out.println(
+                                          "Nome = " + aluno.getNome() + "  Resultado = " + aluno.getAlunoAprovado2());
                         }
-
-                  }
-                  System.out.println(".....................");
-                  System.out.println("lista dos aprovados");
-                  for (Aluno aluno : maps.get(StatusAluno.APROVADO)) {
-                        System.out.println("Nome = " + aluno.getNome() + "  Resultado = " + aluno.getAlunoAprovado2());
-                  }
-                  System.out.println(".....................");
-                  System.out.println("lista dos que Recuperação");
-
-                  for (Aluno aluno : maps.get(StatusAluno.RECUPERACAO)) {
-                        System.out.println("Nome = " + aluno.getNome() + "  Resultado = " + aluno.getAlunoAprovado2());
                   }
 
-                  System.out.println(".....................");
-                  System.out.println("lista alunos Reprovados");
+            } catch (NumberFormatException e) {
 
-                  for (Aluno aluno : maps.get(StatusAluno.REPROVADO)) {
-                        System.out.println("Nome = " + aluno.getNome() + "  Resultado = " + aluno.getAlunoAprovado2());
+                  StringBuilder NFE = new StringBuilder();
+                  NFE.append("erro " + e.getMessage());
+                  JOptionPane.showMessageDialog(null,
+                              "\n erro de conversão....\n" + e.getClass() + "\n " + NFE.toString());
+                  e.printStackTrace();
+
+            } catch (NullPointerException e) {
+
+                  StringBuilder NPE = new StringBuilder();
+                  NPE.append("erro " + e.getMessage());
+                  JOptionPane.showMessageDialog(null,
+                              "\n erro de nullpointer...\n" + e.getClass() + "\n " + NPE.toString());
+                  e.printStackTrace();
+            } catch (Exception e) {
+
+                  StringBuilder saida = new StringBuilder();
+                  StringBuilder saida2 = new StringBuilder();
+
+                  saida2.append("erro " + e.getMessage());
+
+                  for (int i = 0; i < e.getStackTrace().length; i++) {
+
+                        saida.append("\n classe :" + e.getStackTrace()[i].getClassName());
+                        saida.append("\n metodo :" + e.getStackTrace()[i].getMethodName());
+                        saida.append("\n linha :" + e.getStackTrace()[i].getLineNumber());
+                        saida.append("\n Class :" + e.getClass().getName());
+
                   }
+                  JOptionPane.showMessageDialog(null, "\n Erro ao converter letras em numeros: " + saida.toString()
+                              + " \n\n causa : " + saida2.toString());
+
+                  e.printStackTrace();
             }
+
       }
+
 }
