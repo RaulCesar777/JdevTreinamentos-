@@ -1,8 +1,11 @@
 package cursojava.executavel;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
@@ -11,12 +14,13 @@ import cursojava.classes.Disciplina;
 import cursojava.classes.Secretario;
 import cursojava.classesauxiliares.FuncaoAutenticacao;
 import cursojava.constantes.StatusAluno;
+import cursojava.exececao.ExececaoBoasVindas;
 
 public class PrimeiraClasseJava {
 
       public static void main(String[] args) {
-
             try {
+                  lerarquivodeboasvindas();
 
                   String login = JOptionPane.showInputDialog("QUAL  O LOGIN");
                   String senha = JOptionPane.showInputDialog("QUAL  A SENHA");
@@ -37,7 +41,7 @@ public class PrimeiraClasseJava {
 
                         HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
 
-                        for (int qtd = 1; qtd <= 5; qtd++) {
+                        for (int qtd = 1; qtd <= 1; qtd++) {
 
                               String NOME = JOptionPane.showInputDialog("Qual o nome do aluno " + qtd + "?");
                               /*
@@ -148,27 +152,61 @@ public class PrimeiraClasseJava {
                   JOptionPane.showMessageDialog(null,
                               "\n erro de nullpointer...\n" + e.getClass() + "\n " + NPE.toString());
                   e.printStackTrace();
+
+            } catch (ExececaoBoasVindas e) {
+
+                  StringBuilder EBV = new StringBuilder();
+                  EBV.append("erro " + e.getMessage());
+                  JOptionPane.showMessageDialog(null,
+                              "\n erro de Boas Vindas...\n" + e.getClass() + "\n " + EBV.toString());
+                  e.printStackTrace();
+
             } catch (Exception e) {
 
                   StringBuilder saida = new StringBuilder();
                   StringBuilder saida2 = new StringBuilder();
-
+                  int Linha = 0;
+                  String Classe = new String();
                   saida2.append("erro " + e.getMessage());
 
                   for (int i = 0; i < e.getStackTrace().length; i++) {
 
-                        saida.append("\n classe :" + e.getStackTrace()[i].getClassName());
-                        saida.append("\n metodo :" + e.getStackTrace()[i].getMethodName());
-                        saida.append("\n linha :" + e.getStackTrace()[i].getLineNumber());
+                        Classe = (e.getStackTrace()[i].getClassName());
+                        Linha = (e.getStackTrace()[i].getLineNumber());
                         saida.append("\n Class :" + e.getClass().getName());
 
                   }
-                  JOptionPane.showMessageDialog(null, "\n Erro ao converter letras em numeros: " + saida.toString()
-                              + " \n\n causa : " + saida2.toString());
+                  JOptionPane.showMessageDialog(null, "\n Erro generico: " + " Linha :" + Linha + "\n Classe : "
+                              + Classe + " \n\n causa : " + saida2);
 
                   e.printStackTrace();
+            } finally {
+                  JOptionPane.showMessageDialog(null, "Até logo");
             }
 
       }
 
+      public static void lerarquivodeboasvindas() throws ExececaoBoasVindas {
+
+            File texto = new File("C://BoasVindas.txt");
+            Scanner sc = null;
+            StringBuilder impressaoarquivo = new StringBuilder();
+            try {
+                  sc = new Scanner(texto);
+                  while (sc.hasNextLine()) {
+                        impressaoarquivo.append(" \n" + sc.nextLine());
+                  }
+                  JOptionPane.showMessageDialog(null, "\n " + impressaoarquivo.toString());
+
+            } catch (FileNotFoundException e) {
+                  throw new ExececaoBoasVindas(e.getMessage());
+
+            } finally {
+                  if (sc != null) {
+                        sc.close();
+
+                  }
+
+            }
+      }
 }
