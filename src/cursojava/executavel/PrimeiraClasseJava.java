@@ -72,10 +72,10 @@ public class PrimeiraClasseJava {
                               for (int pos = 1; pos <= 1; pos++) {
                                     String nomeDisciplina = JOptionPane
                                                 .showInputDialog("QUAL A DISCIPLINA  " + pos + " ");
-                                    String notaDisciplina = JOptionPane.showInputDialog("QUAL A NOTA " + pos + " ");
+                                //    String notaDisciplina = JOptionPane.showInputDialog("QUAL A NOTA " + pos + " ");
                                     Disciplina disciplina = new Disciplina();
                                     disciplina.setDisciplina(nomeDisciplina);
-                                    disciplina.setNota(Double.valueOf(notaDisciplina));
+                                   // disciplina.setNota(Double.valueOf(notaDisciplina));
                                     aluno1.getDisciplinas().add(disciplina);
                               }
 

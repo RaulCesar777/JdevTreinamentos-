@@ -53,7 +53,7 @@ public class Aluno extends Pessoa{
     public double getMediaNota() {
         double somaNotas = 0;
         for (Disciplina disciplina : disciplinas) {
-            somaNotas += disciplina.getNota();
+            somaNotas += disciplina.getMediaNota();
         }
         return somaNotas / disciplinas.size();
     }

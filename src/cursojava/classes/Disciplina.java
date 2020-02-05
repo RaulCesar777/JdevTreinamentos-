@@ -2,8 +2,8 @@ package cursojava.classes;
 
 public class Disciplina {
 
+	private Double[] nota = new Double[4];
 	private String Disciplina;
-	private Double nota;
 
 	public String getDisciplina() {
 		return Disciplina;
@@ -13,13 +13,26 @@ public class Disciplina {
 		Disciplina = disciplina;
 	}
 
-	public double getNota() {
-		return nota;
+	public Double[] getNota() {
+		return this.nota;
 	}
 
-	public void setNota(double nota) {
+	public void setNota(Double[] nota) {
 		this.nota = nota;
 	}
+
+	public double getMediaNotas(){
+		double somaTotal = 0;
+		for (int i = 0; i < nota.length; i++) {
+			somaTotal += nota[i];
+		}
+
+
+		return somaTotal/4;
+	}
+
+
+
 
 	@Override
 	public int hashCode() {
@@ -55,6 +68,10 @@ public class Disciplina {
 	@Override
 	public String toString() {
 		return "{" + " Disciplina='" + getDisciplina() + "'" + ", nota='" + getNota() + "'" + "}";
+	}
+
+	public double getMediaNota() {
+		return 0;
 	}
 
 }
