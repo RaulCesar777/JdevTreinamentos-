@@ -19,6 +19,8 @@ import cursojava.exececao.ExececaoBoasVindas;
 public class PrimeiraClasseJava {
 
       public static void main(String[] args) {
+            
+     
             try {
                   lerarquivodeboasvindas();
 

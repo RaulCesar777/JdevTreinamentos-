@@ -2,7 +2,7 @@ package cursojava.classes;
 
 public class Diretor extends Pessoa {
 
-    private String registroEducação;
+    private String registroEducacao;
     private int tempoDirecao;
     private String titulacao;
 
@@ -10,20 +10,20 @@ public class Diretor extends Pessoa {
     }
 
     public Diretor(String nome, Integer idade, String dataNascimento, String regitroGeral, String numeroCPF,
-            String nomeMae, String nomePai, String registroEducação, int tempoDirecao, String titulacao) {
+            String nomeMae, String nomePai, String registroEducacao, int tempoDirecao, String titulacao) {
 
         super(nome, idade, dataNascimento, regitroGeral, numeroCPF, nomeMae, nomePai);
-        this.registroEducação = registroEducação;
+        this.registroEducacao = registroEducacao;
         this.tempoDirecao = tempoDirecao;
         this.titulacao = titulacao;
     }
 
-    public String getRegistroEducação() {
-        return this.registroEducação;
+    public String getRegistroEducacao() {
+        return this.registroEducacao;
     }
 
-    public void setRegistroEducação(String registroEducação) {
-        this.registroEducação = registroEducação;
+    public void setRegistroEducacao(String registroEducacao) {
+        this.registroEducacao = registroEducacao;
     }
 
     public int getTempoDirecao() {
@@ -46,7 +46,7 @@ public class Diretor extends Pessoa {
     public int hashCode() {
         final int prime = 31;
         int result = super.hashCode();
-        result = prime * result + ((registroEducação == null) ? 0 : registroEducação.hashCode());
+        result = prime * result + ((registroEducacao == null) ? 0 : registroEducacao.hashCode());
         return result;
     }
 
@@ -59,10 +59,10 @@ public class Diretor extends Pessoa {
         if (getClass() != obj.getClass())
             return false;
         Diretor other = (Diretor) obj;
-        if (registroEducação == null) {
-            if (other.registroEducação != null)
+        if (registroEducacao == null) {
+            if (other.registroEducacao != null)
                 return false;
-        } else if (!registroEducação.equals(other.registroEducação))
+        } else if (!registroEducacao.equals(other.registroEducacao))
             return false;
         return true;
     }
@@ -70,7 +70,7 @@ public class Diretor extends Pessoa {
     @Override
     public String toString() {
         return super.toString()+
-         "\n[Diretor]\n registroEducação = " + registroEducação + ",\n tempoDirecao = " + tempoDirecao + ",\n titulacao = "
+         "\n[Diretor]\n registroEducação = " + registroEducacao + ",\n tempoDirecao = " + tempoDirecao + ",\n titulacao = "
                 + titulacao + "\n";
     }
 

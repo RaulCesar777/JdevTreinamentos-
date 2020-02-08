@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ExecutarTela",
+            "request": "launch",
+            "mainClass": "cursojava.threads.ExecutarTela",
+            "projectName": "Escola"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Thread",
+            "request": "launch",
+            "mainClass": "cursojava.threads.Thread",
+            "projectName": "Escola"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Matriz",
             "request": "launch",
             "mainClass": "cursojava.executavel.Matriz",
