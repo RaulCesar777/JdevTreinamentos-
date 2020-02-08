@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Matriz",
+            "request": "launch",
+            "mainClass": "cursojava.executavel.Matriz",
+            "projectName": "Escola"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ArrayVetor",
             "request": "launch",
             "mainClass": "cursojava.executavel.ArrayVetor",
