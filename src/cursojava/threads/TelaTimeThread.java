@@ -38,6 +38,26 @@ public class TelaTimeThread extends JDialog {
 			while (true) {
 
 				mostratempo.setText(new SimpleDateFormat("dd/MM/yyyy hh:mm:ss").format(Calendar.getInstance().getTime()));
+				
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			
+		}
+	};
+	private Runnable thread2 = new Runnable() {
+
+		@Override
+		public void run() {
+
+			while (true) {
+
+				mostratempo2.setText(new SimpleDateFormat("dd/MM/yyyy hh/mm/ss").format(Calendar.getInstance().getTime()));
+				
 				try {
 					Thread.sleep(1000);
 				} catch (InterruptedException e) {
@@ -49,6 +69,7 @@ public class TelaTimeThread extends JDialog {
 		}
 	};
 	private Thread thread1Time;
+	private Thread thread2Time;
 
 	public TelaTimeThread() {
 
@@ -57,6 +78,8 @@ public class TelaTimeThread extends JDialog {
 		setLocationRelativeTo(null);
 		setResizable(false);
 		/////// primeira parte
+
+		
 		GridBagConstraints gridbagconstraits = new GridBagConstraints();
 		gridbagconstraits.gridx = 0;
 		gridbagconstraits.gridy = 0;
@@ -111,6 +134,10 @@ public class TelaTimeThread extends JDialog {
 
 				thread1Time =new Thread (thread1);
 				thread1Time.start();
+				thread2Time =new Thread (thread2);
+				thread2Time.start();
+				jbstart.setEnabled(false);
+				jbstop.setEnabled(true);
 			}
 
 
@@ -123,12 +150,16 @@ public class TelaTimeThread extends JDialog {
 
 				
 				thread1Time.stop();
+				thread2Time.stop();
+
+				jbstart.setEnabled(true);
+				jbstop.setEnabled(false);
 				
 			}
 
 
 		});
-
+		jbstop.setEnabled(false);
 		add(jpanel, BorderLayout.WEST);
 		/// sempre o fim
 		setVisible(true);
