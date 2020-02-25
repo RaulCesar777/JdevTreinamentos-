@@ -13,32 +13,40 @@ public class ImplementacaoFilaThread extends Thread {
 
     @Override
     public void run() {
-        Iterator iteracao = pilha_fila.iterator();
+        System.out.println("----funciona ------");
+        int a =0;
+        while (true) {
+            Iterator iteracao = pilha_fila.iterator();
 
-        synchronized (iteracao) {
+            synchronized (iteracao) {
 
-            while (iteracao.hasNext()) {
-                ObjetoFilaThread processar = (ObjetoFilaThread) iteracao.next();
+                while (iteracao.hasNext()) {
+                    ObjetoFilaThread processar = (ObjetoFilaThread) iteracao.next();
 
-                /// processar e-mail
+                    /// processar e-mail
+                    a++;
+                    System.out.println("---------------------------------------------------"+a);
+                    System.out.println(processar.getNome());
+                    System.out.println(processar.getEmail());
 
-                iteracao.remove();
+                    iteracao.remove();
 
-                try {
-                    Thread.sleep(50);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    try {
+                        Thread.sleep(50);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
                 }
 
             }
-
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
 
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
 }
