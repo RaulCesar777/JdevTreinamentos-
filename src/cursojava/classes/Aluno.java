@@ -13,6 +13,8 @@ public class Aluno extends Pessoa{
     private String serieMatriculado;
     private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 
+    
+    
 
 
     public Aluno() {

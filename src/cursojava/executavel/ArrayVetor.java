@@ -5,6 +5,8 @@ import cursojava.classes.Disciplina;
 
 public class ArrayVetor {
     public static void main(String[] args) {
+    	
+    	
 
         Double[] notas = { 8.8, 9.9, 7.7, 3.1 };
         Double[] notasLOGICA = { 6.8, 4.9, 7.4, 5.6, 10.0, 5.9, 9.8 };
